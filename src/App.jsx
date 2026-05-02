@@ -1,79 +1,118 @@
 export default function App() {
-  const whatsappLink =
-    "https://wa.me/919040467041?text=Hello%20Abhilash%20Sir%2C%20I%20want%20a%20free%20portfolio%20review%20and%20investment%20consultation.";
+  const whatsapp =
+    "https://wa.me/919040467041?text=Hello%20Abhilash%20Sir%2C%20I%20want%20to%20discuss%20my%20investment%20plan.";
 
   return (
     <div style={styles.page}>
       <header style={styles.header}>
         <div>
-          <h1 style={styles.logo}>WIS</h1>
-          <p style={styles.logoSub}>Wealthverse Investment Solution</p>
+          <div style={styles.logo}>WIS</div>
+          <div style={styles.logoSub}>Wealthverse Investment Solution</div>
         </div>
+
         <nav style={styles.nav}>
+          <a href="#about" style={styles.navLink}>About</a>
           <a href="#services" style={styles.navLink}>Services</a>
           <a href="#why" style={styles.navLink}>Why WIS</a>
-          <a href="#contact" style={styles.navLink}>Contact</a>
+          <a href="#contact" style={styles.navCta}>Consult Now</a>
         </nav>
       </header>
 
       <section style={styles.hero}>
-        <div style={styles.heroText}>
-          <p style={styles.badge}>CA-Led Wealth Planning • Research Driven • Goal Based</p>
-          <h2 style={styles.heroTitle}>Plan Your Wealth With Clarity, Confidence & Smart Research</h2>
-          <p style={styles.heroPara}>
-            WIS helps first-time investors, salaried individuals, retirees, HNIs, Trusts and AOPs
-            build structured investment plans for long-term wealth creation, children’s future,
-            tax efficiency and peaceful retirement.
+        <div style={styles.heroLeft}>
+          <p style={styles.kicker}>Private Wealth Advisory • CA-Led • Research Driven</p>
+
+          <h1 style={styles.heroTitle}>
+            Premium Wealth Planning for Serious Investors
+          </h1>
+
+          <p style={styles.heroText}>
+            WIS helps first-time investors, salaried individuals, retirees, HNIs,
+            Trusts and AOPs build goal-based, tax-efficient investment plans with clarity,
+            discipline and long-term vision.
           </p>
 
-          <div style={styles.buttons}>
-            <a href={whatsappLink} style={styles.primaryBtn}>Get Your Free Portfolio Review</a>
-            <a href={whatsappLink} style={styles.secondaryBtn}>Start Consultation on WhatsApp</a>
+          <div style={styles.ctaRow}>
+            <a href={whatsapp} style={styles.goldBtn}>Get Your Free Portfolio Review</a>
+            <a href="#services" style={styles.outlineBtn}>Explore Services</a>
+          </div>
+
+          <div style={styles.trustRow}>
+            <div><strong>CA</strong><span>Led Advisory</span></div>
+            <div><strong>SIF</strong><span>Distributor Certified</span></div>
+            <div><strong>RA</strong><span>Research Analyst</span></div>
           </div>
         </div>
 
-        <div style={styles.profileCard}>
-          <div style={styles.profileCircle}>AP</div>
-          <h3>Abhilash Pati</h3>
-          <p>Chartered Accountant</p>
-          <p>Certified Mutual Fund & SIF Distributor</p>
-          <p>Certified Research Analyst</p>
+        <div style={styles.heroCard}>
+          <div style={styles.photoPlaceholder}>AP</div>
+          <h2 style={styles.profileName}>Abhilash Pati</h2>
+          <p style={styles.profileRole}>Chartered Accountant</p>
+          <div style={styles.profileLine}></div>
+          <p style={styles.profileText}>
+            Certified Mutual Fund & SIF Distributor<br />
+            Certified Research Analyst<br />
+            Founder, WIS
+          </p>
+          <a href={whatsapp} style={styles.cardBtn}>Talk to Abhilash</a>
         </div>
       </section>
 
-      <section style={styles.audience}>
-        <h2 style={styles.sectionTitle}>Who We Serve</h2>
-        <div style={styles.grid}>
-          {["First-time Investors", "Salaried Individuals", "Retirees", "HNIs", "Trusts / AOPs"].map((item) => (
-            <div style={styles.smallCard} key={item}>{item}</div>
-          ))}
-        </div>
+      <section style={styles.clientStrip}>
+        <span>Built for</span>
+        <strong>First-time Investors</strong>
+        <strong>Salaried Professionals</strong>
+        <strong>Retirees</strong>
+        <strong>HNIs</strong>
+        <strong>Trusts / AOPs</strong>
+      </section>
+
+      <section id="about" style={styles.storySection}>
+        <p style={styles.sectionLabel}>About WIS</p>
+        <h2 style={styles.sectionTitle}>
+          Investment is our passion, not compulsion.
+        </h2>
+        <p style={styles.storyText}>
+          Wealthverse Investment Solution was created to offer premium,
+          personalized wealth planning based on each client’s goals, risk profile
+          and life stage. We combine professional qualification, smart research and
+          technology-driven investing to simplify serious financial decisions.
+        </p>
       </section>
 
       <section id="services" style={styles.section}>
-        <h2 style={styles.sectionTitle}>Premium Wealth Services</h2>
-        <div style={styles.cards}>
-          <Card title="Wealth Management" text="Structured wealth planning designed around your financial goals and risk profile." />
-          <Card title="Goal-Based Investing" text="Plan for children’s education, retirement, major purchases and long-term milestones." />
-          <Card title="Tax Planning" text="Tax-aware investment structuring to improve post-tax outcomes." />
-          <Card title="Retirement Planning" text="Build a peaceful retirement roadmap with stable cash flow and capital protection focus." />
-          <Card title="Financing Guidance" text="Smart guidance on financial decisions, loans and capital allocation." />
-          <Card title="Research-Based Investing" text="Technology-driven, new-age research approach for better decision-making." />
+        <p style={styles.sectionLabel}>Services</p>
+        <h2 style={styles.sectionTitle}>Private wealth services designed around your goals.</h2>
+
+        <div style={styles.serviceGrid}>
+          <Service title="Wealth Management" text="Structured wealth roadmap for long-term capital growth and stability." />
+          <Service title="Goal-Based Investing" text="Children’s future, retirement, family goals and milestone-based planning." />
+          <Service title="Tax Planning" text="Tax-aware investing designed to improve post-tax outcomes." />
+          <Service title="Retirement Planning" text="Create a peaceful retirement plan with disciplined cash-flow strategy." />
+          <Service title="Financing Guidance" text="Smart capital allocation and financing decisions for individuals and entities." />
+          <Service title="Research Investing" text="New-age, technology-driven research approach for informed decisions." />
         </div>
       </section>
 
-      <section id="why" style={styles.why}>
-        <h2 style={styles.sectionTitle}>Why Choose WIS?</h2>
-        <div style={styles.cards}>
-          <Card title="CA-Led Advice" text="Financial guidance backed by professional qualification and disciplined analysis." />
-          <Card title="Smartwork Over Hardwork" text="We believe wealth grows through smart planning, not random investing." />
-          <Card title="Client-Specific Planning" text="Every portfolio is designed according to the client’s needs, goals and future priorities." />
+      <section id="why" style={styles.whySection}>
+        <div>
+          <p style={styles.sectionLabel}>Why Choose WIS</p>
+          <h2 style={styles.sectionTitle}>Premium guidance. Personal attention. Smart execution.</h2>
+        </div>
+
+        <div style={styles.whyGrid}>
+          <Why number="01" title="CA-Led Clarity" text="Professional financial thinking with disciplined planning." />
+          <Why number="02" title="Client-Specific Strategy" text="No generic advice. Plans are built around your goals and situation." />
+          <Why number="03" title="Smartwork Approach" text="We focus on intelligent planning, not random hard work." />
+          <Why number="04" title="Research First" text="Technology-driven and research-backed investing framework." />
         </div>
       </section>
 
-      <section style={styles.testimonials}>
-        <h2 style={styles.sectionTitle}>Client Experiences</h2>
-        <div style={styles.cards}>
+      <section style={styles.testimonialSection}>
+        <p style={styles.sectionLabel}>Client Experiences</p>
+        <h2 style={styles.sectionTitle}>What clients value about WIS</h2>
+
+        <div style={styles.testimonialGrid}>
           <div style={styles.testimonial}>
             “Savings was difficult before, but after partnering with WIS it has become auto-driven.”
           </div>
@@ -83,27 +122,30 @@ export default function App() {
         </div>
       </section>
 
-      <section style={styles.socialSection}>
-        <h2>Learn Finance in 30 Seconds</h2>
-        <p>
-          Subscribe to our YouTube channel and follow us on Instagram for simple, practical finance education.
-        </p>
-        <div style={styles.buttons}>
-          <a href="https://www.youtube.com/@Wealthverseinvestmentsolution" style={styles.secondaryBtn}>YouTube</a>
-          <a href="https://instagram.com/wealthverseinvest" style={styles.secondaryBtn}>Instagram</a>
-        </div>
+      <section style={styles.finalCta}>
+        <h2>Ready to build a smarter investment plan?</h2>
+        <p>Start with a free portfolio review and understand where your money stands today.</p>
+        <a href={whatsapp} style={styles.goldBtn}>Start Your Free Consultation on WhatsApp</a>
       </section>
 
       <section id="contact" style={styles.contact}>
-        <h2>Start Your Wealth Journey</h2>
-        <p><strong>Abhilash Pati</strong> — Chartered Accountant</p>
-        <p>Sambalpur, Odisha</p>
-        <p>Phone: +91-9040467041</p>
-        <p>Email: caabhilashpati2017@gmail.com</p>
-        <a href={whatsappLink} style={styles.primaryBtn}>Explore Your Investment Plan</a>
+        <div>
+          <h2>Contact WIS</h2>
+          <p><strong>Abhilash Pati</strong> — Chartered Accountant</p>
+          <p>Sambalpur, Odisha</p>
+          <p>+91-9040467041</p>
+          <p>caabhilashpati2017@gmail.com</p>
+        </div>
+
+        <div>
+          <h3>Learn finance in 30 seconds</h3>
+          <p>Subscribe on YouTube and follow us on Instagram for simple finance education.</p>
+          <a href="https://www.youtube.com/@Wealthverseinvestmentsolution" style={styles.social}>YouTube</a>
+          <a href="https://instagram.com/wealthverseinvest" style={styles.social}>Instagram</a>
+        </div>
       </section>
 
-      <a href={whatsappLink} style={styles.floatingWhatsApp}>WhatsApp</a>
+      <a href={whatsapp} style={styles.floating}>WhatsApp</a>
 
       <footer style={styles.footer}>
         Disclaimer: Investments are subject to market risks. Past performance does not guarantee future returns.
@@ -113,9 +155,19 @@ export default function App() {
   );
 }
 
-function Card({ title, text }) {
+function Service({ title, text }) {
   return (
-    <div style={styles.card}>
+    <div style={styles.serviceCard}>
+      <h3>{title}</h3>
+      <p>{text}</p>
+    </div>
+  );
+}
+
+function Why({ number, title, text }) {
+  return (
+    <div style={styles.whyCard}>
+      <span>{number}</span>
       <h3>{title}</h3>
       <p>{text}</p>
     </div>
@@ -124,186 +176,292 @@ function Card({ title, text }) {
 
 const styles = {
   page: {
-    fontFamily: "Arial, sans-serif",
-    background: "linear-gradient(135deg, #020617, #0f172a, #111827)",
-    color: "white",
     minHeight: "100vh",
+    color: "#f8fafc",
+    background:
+      "radial-gradient(circle at top left, rgba(212,175,55,0.18), transparent 32%), linear-gradient(135deg, #050505 0%, #0b1120 55%, #020617 100%)",
+    fontFamily: "Georgia, 'Times New Roman', serif",
   },
   header: {
-    padding: "22px 8%",
+    padding: "24px 8%",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    borderBottom: "1px solid rgba(255,255,255,0.1)",
+    borderBottom: "1px solid rgba(212,175,55,0.2)",
     flexWrap: "wrap",
-    gap: "15px",
+    gap: 20,
   },
   logo: {
-    color: "#facc15",
-    fontSize: "38px",
-    margin: 0,
+    color: "#d4af37",
+    fontSize: 42,
+    fontWeight: 700,
+    letterSpacing: 2,
   },
   logoSub: {
     color: "#cbd5e1",
-    margin: 0,
+    fontSize: 14,
+    letterSpacing: 1,
   },
   nav: {
     display: "flex",
-    gap: "20px",
+    gap: 22,
+    alignItems: "center",
     flexWrap: "wrap",
+    fontFamily: "Arial, sans-serif",
   },
   navLink: {
-    color: "#e2e8f0",
+    color: "#e5e7eb",
     textDecoration: "none",
+    fontSize: 14,
+  },
+  navCta: {
+    color: "#050505",
+    background: "#d4af37",
+    padding: "10px 16px",
+    borderRadius: 999,
+    textDecoration: "none",
+    fontWeight: 700,
   },
   hero: {
-    padding: "80px 8%",
+    padding: "90px 8% 70px",
     display: "flex",
-    alignItems: "center",
     justifyContent: "space-between",
-    gap: "40px",
+    gap: 50,
+    alignItems: "center",
     flexWrap: "wrap",
   },
-  heroText: {
-    maxWidth: "720px",
+  heroLeft: {
+    maxWidth: 760,
   },
-  badge: {
-    color: "#facc15",
-    fontWeight: "bold",
+  kicker: {
+    color: "#d4af37",
+    fontFamily: "Arial, sans-serif",
+    fontWeight: 700,
+    letterSpacing: 1,
+    textTransform: "uppercase",
+    fontSize: 13,
   },
   heroTitle: {
-    fontSize: "54px",
-    lineHeight: "1.08",
-    margin: "18px 0",
+    fontSize: "clamp(44px, 6vw, 76px)",
+    lineHeight: 1,
+    margin: "20px 0",
+    maxWidth: 850,
   },
-  heroPara: {
+  heroText: {
+    fontFamily: "Arial, sans-serif",
     color: "#cbd5e1",
-    fontSize: "18px",
-    lineHeight: "1.7",
+    fontSize: 18,
+    lineHeight: 1.8,
+    maxWidth: 700,
   },
-  buttons: {
+  ctaRow: {
     display: "flex",
-    gap: "15px",
-    marginTop: "28px",
+    gap: 16,
     flexWrap: "wrap",
+    marginTop: 32,
+    fontFamily: "Arial, sans-serif",
   },
-  primaryBtn: {
-    background: "#facc15",
-    color: "#020617",
-    padding: "14px 24px",
-    borderRadius: "12px",
+  goldBtn: {
+    background: "linear-gradient(135deg, #d4af37, #f7d774)",
+    color: "#050505",
+    padding: "15px 24px",
+    borderRadius: 999,
     textDecoration: "none",
-    fontWeight: "bold",
+    fontWeight: 800,
+    display: "inline-block",
+    fontFamily: "Arial, sans-serif",
+  },
+  outlineBtn: {
+    border: "1px solid rgba(212,175,55,0.45)",
+    color: "#f8fafc",
+    padding: "15px 24px",
+    borderRadius: 999,
+    textDecoration: "none",
     display: "inline-block",
   },
-  secondaryBtn: {
-    border: "1px solid rgba(255,255,255,0.25)",
-    color: "white",
-    padding: "14px 24px",
-    borderRadius: "12px",
-    textDecoration: "none",
-    display: "inline-block",
+  trustRow: {
+    display: "flex",
+    gap: 18,
+    flexWrap: "wrap",
+    marginTop: 36,
+    fontFamily: "Arial, sans-serif",
   },
-  profileCard: {
-    background: "rgba(255,255,255,0.07)",
-    border: "1px solid rgba(250,204,21,0.25)",
-    padding: "32px",
-    borderRadius: "24px",
-    width: "280px",
+  trustRow: {
+    display: "flex",
+    gap: 18,
+    flexWrap: "wrap",
+    marginTop: 36,
+    fontFamily: "Arial, sans-serif",
+  },
+  heroCard: {
+    width: 320,
+    padding: 30,
+    borderRadius: 28,
     textAlign: "center",
-    boxShadow: "0 20px 60px rgba(0,0,0,0.35)",
+    background: "linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04))",
+    border: "1px solid rgba(212,175,55,0.35)",
+    boxShadow: "0 30px 80px rgba(0,0,0,0.45)",
+    fontFamily: "Arial, sans-serif",
   },
-  profileCircle: {
-    width: "90px",
-    height: "90px",
+  photoPlaceholder: {
+    width: 110,
+    height: 110,
     borderRadius: "50%",
-    background: "#facc15",
-    color: "#020617",
+    background: "linear-gradient(135deg, #d4af37, #f7d774)",
+    color: "#050505",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    fontSize: "34px",
-    fontWeight: "bold",
-    margin: "0 auto 18px",
+    margin: "0 auto 20px",
+    fontSize: 38,
+    fontWeight: 800,
   },
-  audience: {
-    padding: "50px 8%",
+  profileName: {
+    margin: "0 0 6px",
+    fontFamily: "Georgia, serif",
+  },
+  profileRole: {
+    color: "#d4af37",
+    margin: 0,
+  },
+  profileLine: {
+    height: 1,
+    background: "rgba(212,175,55,0.35)",
+    margin: "22px 0",
+  },
+  profileText: {
+    color: "#cbd5e1",
+    lineHeight: 1.7,
+  },
+  cardBtn: {
+    marginTop: 15,
+    display: "inline-block",
+    color: "#d4af37",
+    textDecoration: "none",
+    fontWeight: 700,
+  },
+  clientStrip: {
+    margin: "0 8%",
+    padding: "20px",
+    borderTop: "1px solid rgba(212,175,55,0.25)",
+    borderBottom: "1px solid rgba(212,175,55,0.25)",
+    display: "flex",
+    gap: 22,
+    flexWrap: "wrap",
+    fontFamily: "Arial, sans-serif",
+    color: "#cbd5e1",
+  },
+  storySection: {
+    padding: "80px 8%",
+    maxWidth: 950,
   },
   section: {
-    padding: "60px 8%",
+    padding: "80px 8%",
+  },
+  sectionLabel: {
+    color: "#d4af37",
+    fontFamily: "Arial, sans-serif",
+    fontWeight: 700,
+    textTransform: "uppercase",
+    letterSpacing: 1,
+    fontSize: 13,
   },
   sectionTitle: {
-    fontSize: "34px",
-    marginBottom: "25px",
+    fontSize: "clamp(32px, 4vw, 52px)",
+    lineHeight: 1.1,
+    margin: "12px 0 28px",
   },
-  grid: {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: "18px",
-  },
-  smallCard: {
-    background: "rgba(250,204,21,0.1)",
-    border: "1px solid rgba(250,204,21,0.25)",
-    padding: "16px 22px",
-    borderRadius: "14px",
-    color: "#fde68a",
-  },
-  cards: {
-    display: "flex",
-    gap: "24px",
-    flexWrap: "wrap",
-  },
-  card: {
-    background: "rgba(255,255,255,0.06)",
-    border: "1px solid rgba(255,255,255,0.1)",
-    padding: "26px",
-    borderRadius: "18px",
-    width: "285px",
+  storyText: {
     color: "#cbd5e1",
+    fontFamily: "Arial, sans-serif",
+    fontSize: 18,
+    lineHeight: 1.8,
   },
-  why: {
-    padding: "60px 8%",
-    background: "rgba(255,255,255,0.03)",
+  serviceGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+    gap: 22,
   },
-  testimonials: {
-    padding: "60px 8%",
+  serviceCard: {
+    padding: 28,
+    borderRadius: 24,
+    background: "rgba(255,255,255,0.055)",
+    border: "1px solid rgba(212,175,55,0.18)",
+    fontFamily: "Arial, sans-serif",
+  },
+  whySection: {
+    padding: "80px 8%",
+    background: "rgba(255,255,255,0.035)",
+  },
+  whyGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+    gap: 22,
+  },
+  whyCard: {
+    padding: 28,
+    borderRadius: 24,
+    background: "#050505",
+    border: "1px solid rgba(212,175,55,0.24)",
+    fontFamily: "Arial, sans-serif",
+  },
+  testimonialSection: {
+    padding: "80px 8%",
+  },
+  testimonialGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+    gap: 24,
   },
   testimonial: {
-    background: "rgba(15,23,42,0.85)",
-    borderLeft: "4px solid #facc15",
-    padding: "26px",
-    borderRadius: "14px",
-    width: "420px",
-    color: "#e2e8f0",
-    lineHeight: "1.6",
+    padding: 30,
+    borderRadius: 24,
+    background: "rgba(212,175,55,0.08)",
+    borderLeft: "4px solid #d4af37",
+    color: "#e5e7eb",
+    fontFamily: "Arial, sans-serif",
+    lineHeight: 1.7,
   },
-  socialSection: {
+  finalCta: {
     margin: "40px 8%",
-    padding: "45px",
-    borderRadius: "24px",
-    background: "linear-gradient(135deg, rgba(250,204,21,0.16), rgba(59,130,246,0.12))",
+    padding: "55px",
+    borderRadius: 32,
+    background: "linear-gradient(135deg, rgba(212,175,55,0.22), rgba(255,255,255,0.06))",
+    border: "1px solid rgba(212,175,55,0.35)",
   },
   contact: {
-    padding: "60px 8%",
+    padding: "80px 8%",
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+    gap: 40,
     color: "#cbd5e1",
+    fontFamily: "Arial, sans-serif",
   },
-  floatingWhatsApp: {
+  social: {
+    color: "#d4af37",
+    marginRight: 18,
+    textDecoration: "none",
+    fontWeight: 700,
+  },
+  floating: {
     position: "fixed",
-    right: "22px",
-    bottom: "22px",
-    background: "#22c55e",
+    right: 22,
+    bottom: 22,
+    background: "#25D366",
     color: "white",
     padding: "14px 20px",
-    borderRadius: "999px",
+    borderRadius: 999,
     textDecoration: "none",
-    fontWeight: "bold",
-    boxShadow: "0 10px 30px rgba(0,0,0,0.35)",
+    fontWeight: 800,
+    fontFamily: "Arial, sans-serif",
+    boxShadow: "0 14px 40px rgba(0,0,0,0.45)",
   },
   footer: {
-    padding: "26px 8%",
-    borderTop: "1px solid rgba(255,255,255,0.1)",
+    padding: "28px 8%",
     color: "#94a3b8",
-    fontSize: "13px",
-    lineHeight: "1.6",
+    borderTop: "1px solid rgba(212,175,55,0.18)",
+    fontFamily: "Arial, sans-serif",
+    fontSize: 13,
+    lineHeight: 1.7,
   },
 };
