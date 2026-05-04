@@ -110,7 +110,76 @@ export default function App() {
           Explore Your Investment Plan
         </a>
       </section>
+{/* PORTFOLIO ASSESSMENT TOOL */}
+<section style={styles.section}>
+  <h2 style={styles.sectionTitle}>Portfolio Assessment Tool</h2>
 
+  <p style={styles.text}>
+    Answer a few structured questions to understand your financial position,
+    risk profile and investment readiness.
+    <br /><br />
+    Based on your responses, WIS can help you build a personalized portfolio
+    aligned with your goals.
+  </p>
+
+  <div style={{ marginTop: 25 }}>
+    <a
+      href="https://docs.google.com/forms/d/e/1FAIpQLSclu338Z4HoUyAC6j5AChzsH_A1TP5OXCaG2Vu7BCFT-1iXbQ/viewform"
+      target="_blank"
+      style={styles.primaryBtn}
+    >
+      Take Free Portfolio Assessment
+    </a>
+  </div>
+</section>
+
+{/* PRICING SECTION */}
+<section style={styles.sectionDark}>
+  <h2 style={styles.sectionTitle}>Our Advisory Plans</h2>
+
+  <div style={styles.cards}>
+
+    <div style={styles.pricingCard}>
+      <h3>Basic Review</h3>
+      <p style={styles.price}>₹999</p>
+      <ul style={styles.list}>
+        <li>Portfolio Review</li>
+        <li>Risk Assessment</li>
+        <li>Basic Suggestions</li>
+      </ul>
+      <a href={whatsapp} target="_blank" style={styles.secondaryBtn}>
+        Get Started
+      </a>
+    </div>
+
+    <div style={styles.pricingCardHighlight}>
+      <h3>Portfolio Plan</h3>
+      <p style={styles.price}>₹2,999</p>
+      <ul style={styles.list}>
+        <li>Goal-Based Allocation</li>
+        <li>SIP / Lumpsum Strategy</li>
+        <li>Fund Selection Guidance</li>
+      </ul>
+      <a href={whatsapp} target="_blank" style={styles.primaryBtn}>
+        Most Popular
+      </a>
+    </div>
+
+    <div style={styles.pricingCard}>
+      <h3>Premium Wealth</h3>
+      <p style={styles.price}>Custom</p>
+      <ul style={styles.list}>
+        <li>Advanced Planning</li>
+        <li>Tax Optimization</li>
+        <li>Ongoing Advisory</li>
+      </ul>
+      <a href={whatsapp} target="_blank" style={styles.secondaryBtn}>
+        Contact Now
+      </a>
+    </div>
+
+  </div>
+</section>
       <section id="contact" style={styles.section}>
         <h2 style={styles.sectionTitle}>Contact</h2>
         <p><strong>Abhilash Pati</strong></p>
