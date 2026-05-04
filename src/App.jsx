@@ -4,8 +4,6 @@ export default function App() {
 
   return (
     <div style={styles.page}>
-
-      {/* HEADER */}
       <header style={styles.header}>
         <div>
           <div style={styles.logo}>WIS</div>
@@ -20,7 +18,6 @@ export default function App() {
         </nav>
       </header>
 
-      {/* HERO */}
       <section style={styles.hero}>
         <div style={styles.heroText}>
           <p style={styles.kicker}>CA-Led Wealth Advisory • Research Driven</p>
@@ -36,10 +33,10 @@ export default function App() {
           </p>
 
           <div style={styles.buttons}>
-            <a href={whatsapp} style={styles.primaryBtn}>
+            <a href={whatsapp} target="_blank" style={styles.primaryBtn}>
               Get Your Free Portfolio Review
             </a>
-            <a href={whatsapp} style={styles.secondaryBtn}>
+            <a href={whatsapp} target="_blank" style={styles.secondaryBtn}>
               Start Consultation on WhatsApp
             </a>
           </div>
@@ -47,39 +44,36 @@ export default function App() {
 
         <div style={styles.profileCard}>
           <div style={styles.profileCircle}>AP</div>
-          <h3>Abhilash Pati</h3>
-          <p>Chartered Accountant</p>
+          <h3 style={styles.profileName}>Abhilash Pati</h3>
+          <p style={styles.profileRole}>Chartered Accountant</p>
           <p style={styles.smallText}>
             Certified MF & SIF Distributor | Research Analyst
           </p>
         </div>
       </section>
 
-      {/* ABOUT */}
       <section id="about" style={styles.section}>
         <h2 style={styles.sectionTitle}>About WIS</h2>
         <p style={styles.text}>
           Wealthverse Investment Solution was built with a simple philosophy —
           investment should be driven by purpose, not pressure.
           <br /><br />
-          Led by Abhilash Pati (Chartered Accountant), WIS focuses on
-          structured, research-based and goal-oriented investment planning.
+          Led by Abhilash Pati, Chartered Accountant, WIS focuses on structured,
+          research-based and goal-oriented investment planning.
         </p>
       </section>
 
-      {/* SERVICES */}
       <section id="services" style={styles.section}>
         <h2 style={styles.sectionTitle}>Our Services</h2>
 
         <div style={styles.cards}>
           <Card title="Wealth Management" text="Long-term structured wealth planning tailored to your life goals." />
           <Card title="Goal-Based Investing" text="Invest with clarity for retirement, children and future milestones." />
-          <Card title="Tax Planning" text="Reduce tax burden while maintaining strong returns." />
+          <Card title="Tax Planning" text="Reduce tax burden while maintaining strong financial planning discipline." />
           <Card title="Retirement Planning" text="Build financial independence and predictable income streams." />
         </div>
       </section>
 
-      {/* WHY WIS */}
       <section style={styles.sectionDark}>
         <h2 style={styles.sectionTitle}>Why WIS</h2>
 
@@ -90,7 +84,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* HISTORY (NEW) */}
       <section id="history" style={styles.section}>
         <h2 style={styles.sectionTitle}>The Story Behind WIS</h2>
 
@@ -98,9 +91,9 @@ export default function App() {
           WIS was created from a simple observation — most people struggle with
           investing not because they lack money, but because they lack clarity.
           <br /><br />
-          Many investors either follow random advice or stick to traditional
-          options without understanding the impact of inflation, taxation and
-          long-term planning.
+          Many investors either follow random advice or stay limited to
+          traditional options without understanding the impact of inflation,
+          taxation and long-term planning.
           <br /><br />
           Wealthverse Investment Solution was built to change that — by bringing
           structured thinking, research-backed decisions and goal-based investing
@@ -108,22 +101,31 @@ export default function App() {
         </p>
       </section>
 
-      {/* CTA */}
       <section style={styles.cta}>
         <h2>Start Your Investment Journey With Clarity</h2>
-        <a href={whatsapp} style={styles.primaryBtn}>
+        <p style={styles.ctaText}>
+          Begin with a conversation and understand how your money can be planned better.
+        </p>
+        <a href={whatsapp} target="_blank" style={styles.primaryBtn}>
           Explore Your Investment Plan
         </a>
       </section>
 
-      {/* CONTACT */}
       <section id="contact" style={styles.section}>
-        <h2>Contact</h2>
+        <h2 style={styles.sectionTitle}>Contact</h2>
         <p><strong>Abhilash Pati</strong></p>
         <p>Sambalpur, Odisha</p>
         <p>+91-9040467041</p>
         <p>caabhilashpati2017@gmail.com</p>
       </section>
+
+      <a
+        href={whatsapp}
+        target="_blank"
+        style={styles.floatingWhatsapp}
+      >
+        WhatsApp
+      </a>
 
       <footer style={styles.footer}>
         Investments are subject to market risks. Please consult before investing.
@@ -145,7 +147,8 @@ const styles = {
   page: {
     background: "#020617",
     color: "white",
-    fontFamily: "Arial",
+    fontFamily: "Arial, sans-serif",
+    minHeight: "100vh",
   },
   header: {
     padding: "20px 8%",
@@ -153,61 +156,181 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     borderBottom: "1px solid rgba(255,255,255,0.1)",
+    flexWrap: "wrap",
+    gap: 20,
   },
-  logo: { color: "#facc15", fontSize: 32 },
-  logoSub: { fontSize: 12, color: "#94a3b8" },
-  nav: { display: "flex", gap: 20 },
-  navLink: { color: "white", textDecoration: "none" },
+  logo: {
+    color: "#facc15",
+    fontSize: 34,
+    fontWeight: "bold",
+    letterSpacing: 1,
+  },
+  logoSub: {
+    fontSize: 13,
+    color: "#94a3b8",
+  },
+  nav: {
+    display: "flex",
+    gap: 20,
+    flexWrap: "wrap",
+    alignItems: "center",
+  },
+  navLink: {
+    color: "white",
+    textDecoration: "none",
+  },
   navCta: {
     background: "#facc15",
     color: "black",
-    padding: "8px 14px",
-    borderRadius: 6,
+    padding: "9px 15px",
+    borderRadius: 999,
     textDecoration: "none",
+    fontWeight: "bold",
   },
   hero: {
     padding: "80px 8%",
     display: "flex",
     justifyContent: "space-between",
+    alignItems: "center",
+    gap: 40,
+    flexWrap: "wrap",
   },
-  heroText: { maxWidth: 600 },
-  kicker: { color: "#facc15" },
-  heroTitle: { fontSize: 48 },
-  heroPara: { color: "#cbd5e1" },
-  buttons: { marginTop: 20 },
+  heroText: {
+    maxWidth: 650,
+  },
+  kicker: {
+    color: "#facc15",
+    fontWeight: "bold",
+    letterSpacing: 1,
+  },
+  heroTitle: {
+    fontSize: "clamp(38px, 6vw, 64px)",
+    lineHeight: 1.08,
+    margin: "18px 0",
+  },
+  heroPara: {
+    color: "#cbd5e1",
+    fontSize: 18,
+    lineHeight: 1.7,
+  },
+  buttons: {
+    marginTop: 25,
+    display: "flex",
+    gap: 14,
+    flexWrap: "wrap",
+  },
   primaryBtn: {
     background: "#facc15",
     color: "black",
-    padding: "12px 20px",
-    marginRight: 10,
+    padding: "13px 22px",
+    borderRadius: 999,
     textDecoration: "none",
+    fontWeight: "bold",
+    display: "inline-block",
   },
   secondaryBtn: {
-    border: "1px solid white",
-    padding: "12px 20px",
+    border: "1px solid rgba(255,255,255,0.35)",
+    padding: "13px 22px",
+    borderRadius: 999,
     textDecoration: "none",
     color: "white",
+    display: "inline-block",
   },
-  profileCard: { textAlign: "center" },
+  profileCard: {
+    textAlign: "center",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    background: "#0f172a",
+    border: "1px solid rgba(250,204,21,0.35)",
+    borderRadius: 24,
+    padding: 32,
+    width: 280,
+    boxShadow: "0 20px 60px rgba(0,0,0,0.35)",
+  },
   profileCircle: {
-    width: 80,
-    height: 80,
+    width: 90,
+    height: 90,
     borderRadius: "50%",
     background: "#facc15",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    marginBottom: 15,
+    fontSize: 28,
+    fontWeight: "bold",
+    color: "#020617",
   },
-  section: { padding: "60px 8%" },
-  sectionDark: { padding: "60px 8%", background: "#0f172a" },
-  sectionTitle: { fontSize: 28 },
-  text: { color: "#cbd5e1", lineHeight: 1.6 },
-  cards: { display: "flex", gap: 20 },
+  profileName: {
+    margin: "8px 0 5px",
+  },
+  profileRole: {
+    color: "#facc15",
+    margin: "0 0 8px",
+  },
+  smallText: {
+    color: "#cbd5e1",
+    fontSize: 14,
+    lineHeight: 1.5,
+  },
+  section: {
+    padding: "65px 8%",
+  },
+  sectionDark: {
+    padding: "65px 8%",
+    background: "#0f172a",
+  },
+  sectionTitle: {
+    fontSize: 32,
+    marginBottom: 18,
+  },
+  text: {
+    color: "#cbd5e1",
+    lineHeight: 1.7,
+    maxWidth: 850,
+    fontSize: 17,
+  },
+  cards: {
+    display: "flex",
+    gap: 22,
+    flexWrap: "wrap",
+    marginTop: 25,
+  },
   card: {
     background: "#1e293b",
-    padding: 20,
-    borderRadius: 10,
+    padding: 24,
+    borderRadius: 16,
+    width: 260,
+    color: "#cbd5e1",
+    border: "1px solid rgba(255,255,255,0.08)",
   },
-  cta: { textAlign: "center", padding: 50 },
-  footer: { textAlign: "center", padding: 20 },
+  cta: {
+    textAlign: "center",
+    padding: "60px 8%",
+    background: "linear-gradient(135deg, rgba(250,204,21,0.15), rgba(255,255,255,0.04))",
+  },
+  ctaText: {
+    color: "#cbd5e1",
+    marginBottom: 25,
+  },
+  floatingWhatsapp: {
+    position: "fixed",
+    right: "20px",
+    bottom: "20px",
+    background: "#25D366",
+    color: "white",
+    padding: "13px 19px",
+    borderRadius: "999px",
+    textDecoration: "none",
+    fontWeight: "bold",
+    boxShadow: "0 10px 25px rgba(0,0,0,0.35)",
+    zIndex: 1000,
+  },
+  footer: {
+    textAlign: "center",
+    padding: 24,
+    color: "#94a3b8",
+    borderTop: "1px solid rgba(255,255,255,0.1)",
+    fontSize: 13,
+  },
 };
